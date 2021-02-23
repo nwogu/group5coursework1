@@ -7,5 +7,29 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     </head>
 
-    
+    <body>
+        <div id="app">
+             
+            <header>
+                <h2 v-text= "sitename"></h2> 
+            </header>
+                <main>
+                    <div v-if= "showProduct"></div>
+                    <figure>
+                        <img v-bind:src="product.image" style="float: leftt; width: 450px; height: 350px;">
+                        </figure>
+
+                    <div style="margin-left: 510px; margin-top: -200px;">
+                        <h2 v-text ="product.subject" style="float:top_right;"></h2>
+                        <h2 v-html ="product.location" style="float: top_right;"></h2>
+                        <h2>Price: {{product.currency}}{{product.price}}</h2>
+                        <h2>Spaces: {{product.spaces }}</h2>
+                        <button v-on:click="addTocart" style="float: center; background:#0188cc; color: white;"  href="#" class= "btn btn-primary"v-if="canAddToCart">Add to Cart</button>
+                        <button disabled= "disabled" style="float: center; background:#5c5f61; color: white;"  href="#" class= "btn btn-primary" v-else>Add to Cart</button>
+                    </div>
+                </main>
+        </div>
+
+        
+    </body>
 </html>
