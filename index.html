@@ -45,7 +45,19 @@
                 },
                 cart: []
             },
+            methods:{
+                addTocart: function(){
+                    console.log('testing');
+                    this.product.spaces = this.product.spaces <= 0 ? 0 : this.product.spaces - 1;
+                },
             
+            },
+                computed: {
+                    canAddToCart: function(){
+                        return this.product.spaces > 0;
+                    }
+                   
+            }
         });
         </script>
     </body>
